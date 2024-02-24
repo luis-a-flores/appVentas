@@ -17,11 +17,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/store', function () {
+    return view('cliente.shop');
+})->name('store');
 
 Route::get('/store2', function () {
     return view('cliente.shop2');
 })->name('store2');
+
+Route::get('/panel_admin', function () {
+    return view('cliente.panel_admin');
+})->name('admin');
 
 Route::middleware([
     'auth:sanctum',
