@@ -5,3 +5,9 @@
 [x-cloak] {
     display: none;
 }
+
+
+
+.btnSave{
+    @apply bg-blue-500 rounded-sm ;
+}

@@ -40,3 +40,8 @@ Route::middleware([
 });
 
 
+
+
+Route::get('/admin/users', function () {
+    return view('admin.users');
+})->name('adminUsers');
