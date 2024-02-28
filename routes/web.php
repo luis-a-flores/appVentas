@@ -25,6 +25,8 @@ Route::get('/store2', function () {
     return view('cliente.shop2');
 })->name('store2');
 
+
+
 Route::get('/panel_admin', function () {
     return view('cliente.panel_admin');
 })->name('admin');
@@ -38,6 +40,25 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::get('/products', function () {
+    return view('cliente.products');
+})->name('products');
+
+Route::get('/promociones', function () {
+    return view('cliente.promociones');
+})->name('promociones');
+
+Route::get('/nosotros', function () {
+    return view('cliente.nosotros');
+})->name('nosotros');
+
+
+
+Route::get('/encuentranos', function () {
+    return view('cliente.encuentranos');
+})->name('encuentranos');
 
 
 

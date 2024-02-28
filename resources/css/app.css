@@ -11,3 +11,7 @@
 .btnSave{
     @apply bg-blue-500 rounded-sm ;
 }
+
+.navBarUl > li{
+    @apply hover:underline cursor-pointer
+}
