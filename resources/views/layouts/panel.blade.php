@@ -13,9 +13,14 @@
         <link rel="stylesheet" href="../0"  >
         <!-- Scripts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        {{-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> --}}
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+        {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+           {{-- font awesome  6.5.1--}}
+           <link rel="stylesheet" href="     https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
 
 
@@ -1345,6 +1350,8 @@
                     grid-template-columns: repeat(3, minmax(0, 1fr));
                 }
                 }
+
+               
         </style>
 
 
@@ -1355,24 +1362,52 @@
     </head>
 
 
-    <body class="text-gray-800 font-inter">
+    <body class="text-gray-800 font-inter sidebar">
         <!--sidenav -->
-        <div class="fixed left-0 top-0 w-64 h-full bg-[#f8f4f3] p-4 z-50 sidebar-menu transition-transform">
+        <div class="fixed left-0 top-0 w-64 h-full bg-white p-4 z-50 sidebar-menu transition-transform">
             <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
 
-                <h2 class="font-bold text-2xl">LOREM <span class="bg-[#f84525] text-white px-2 rounded-md">IPSUM</span></h2>
+                <h2 class="font-bold text-2xl">Semillas <span class="bg-[#f84525] text-white px-2 rounded-md">Potosi</span></h2>
             </a>
             <ul class="mt-4">
                 <span class="text-gray-400 font-bold">ADMIN</span>
                 <li class="mb-1 group">
                     <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-                        <i class="ri-home-2-line mr-3 text-lg"></i>
-                        <span class="text-sm">Dashboard</span>
+                        <i class="fa-solid fa-cart-shopping "></i>
+                        <span class="text-sm">Pedidos</span>
                     </a>
                 </li>
+               
+          
                 <li class="mb-1 group">
                     <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
-                        <i class='bx bx-user mr-3 text-lg'></i>
+                        <i class="fa-solid fa-lemon "></i>
+                        <span class="text-sm">Productos</span>
+                        <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
+                    </a>
+                    <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+                        <li class="mb-4">
+                            <a href="" class="text-gray-900 text-sm flex items-center hover:text-[#f84525] before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Productos</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="" class="text-gray-900 text-sm flex items-center hover:text-[#f84525] before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Categories</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="" class="text-gray-900 text-sm flex items-center hover:text-[#f84525] before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Unidades</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mb-1 group">
+                    <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <span class="text-sm">Ventas</span>
+                    </a>
+                </li>
+                <span class="text-gray-400 font-bold">PERSONAL</span>
+
+                <li class="mb-1 group">
+                    <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+                        <i class="fa-solid fa-users"></i>
                         <span class="text-sm">Users</span>
                         <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
                     </a>
@@ -1385,49 +1420,15 @@
                         </li>
                     </ul>
                 </li>
+              
                 <li class="mb-1 group">
                     <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-                        <i class='bx bx-list-ul mr-3 text-lg'></i>
-                        <span class="text-sm">Activities</span>
-                    </a>
-                </li>
-                <span class="text-gray-400 font-bold">BLOG</span>
-                <li class="mb-1 group">
-                    <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
-                        <i class='bx bxl-blogger mr-3 text-lg' ></i>
-                        <span class="text-sm">Post</span>
-                        <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
-                    </a>
-                    <ul class="pl-7 mt-2 hidden group-[.selected]:block">
-                        <li class="mb-4">
-                            <a href="" class="text-gray-900 text-sm flex items-center hover:text-[#f84525] before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">All</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="" class="text-gray-900 text-sm flex items-center hover:text-[#f84525] before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Categories</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="mb-1 group">
-                    <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-                        <i class='bx bx-archive mr-3 text-lg'></i>
-                        <span class="text-sm">Archive</span>
-                    </a>
-                </li>
-                <span class="text-gray-400 font-bold">PERSONAL</span>
-                <li class="mb-1 group">
-                    <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-                        <i class='bx bx-bell mr-3 text-lg' ></i>
+                        <i class="fa-solid fa-comments"></i>
                         <span class="text-sm">Notifications</span>
                         <span class=" md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-600 bg-red-200 rounded-full">5</span>
                     </a>
                 </li>
-                <li class="mb-1 group">
-                    <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-                        <i class='bx bx-envelope mr-3 text-lg' ></i>
-                        <span class="text-sm">Messages</span>
-                        <span class=" md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-green-600 bg-green-200 rounded-full">2 New</span>
-                    </a>
-                </li>
+              
             </ul>
         </div>
         <div class="fixed top-0 left-0 w-full h-full bg-black/50 z-40 md:hidden sidebar-overlay"></div>
@@ -1437,7 +1438,8 @@
             <!-- navbar -->
             <div class="py-2 px-6 bg-[#f8f4f3] flex items-center shadow-md shadow-black/5 sticky top-0 left-0 z-30">
                 <button type="button" class="text-lg text-gray-900 font-semibold sidebar-toggle">
-                    <i class="ri-menu-line"></i>
+                  
+                    <i class="fa-solid fa-bars"></i>
                 </button>
 
                 <ul class="ml-auto flex items-center">

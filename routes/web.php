@@ -66,3 +66,11 @@ Route::get('/encuentranos', function () {
 Route::get('/admin/users', function () {
     return view('admin.users');
 })->name('adminUsers');
+
+Route::get('/admin/products', function () {
+    return view('admin.products');
+})->name('adminUsers');
+
+
+
+
