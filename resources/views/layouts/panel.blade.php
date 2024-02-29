@@ -27,6 +27,18 @@
         <style>
              @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+
+             .sidebar i{
+    @apply mr-2;
+}
+
+.btnSave{
+    @apply bg-blue-500 rounded-sm ;
+}
+
+.navBarUl > li{
+    @apply hover:underline cursor-pointer
+}
             /*
                     /*
                 ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com

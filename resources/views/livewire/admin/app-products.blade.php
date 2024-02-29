@@ -1,10 +1,66 @@
-<div class="w-full">
+<div class="">
  
 
+<!-- component -->
+<section class="container mx-auto">
+    <div class="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
+        <header class="px-5 py-4 border-b border-gray-100">
+            <h2 class=" titleTable">Productos</h2>
+        </header>
+        <div class="p-3">
+            <div class="overflow-x-auto">
+                <table class="bgTable">
+                    <thead class="bgTableHead">
+                        <tr>
+                            <th class="p-2 whitespace-nowrap">
+                                <div class="font-semibold text-left">id</div>
+                            </th>
+                            <th class="p-2 whitespace-nowrap">
+                                <div class="font-semibold text-left">Producto</div>
+                            </th>
+                            <th class="p-2 whitespace-nowrap">
+                                <div class="font-semibold text-left">Precio</div>
+                            </th>
+                            <th class="p-2 whitespace-nowrap">
+                                <div class="font-semibold text-center">Acciones</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm divide-y divide-gray-100">
+                        <tr>
+                            <td class="p-2 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg" width="40" height="40" alt="Alex Shatov"></div>
+                                    <div class="font-medium text-gray-800">Alex Shatov</div>
+                                </div>
+                            </td>
+                            <td class="p-2 whitespace-nowrap">
+                                <div class="text-left">frijol</div>
+                            </td>
+                            <td class="p-2 whitespace-nowrap">
+                                <div class="text-left font-medium text-green-500">$2,890.66</div>
+                            </td>
+                            <td class="p-2 whitespace-nowrap">
+                                <button wire:click="$emit('deleteItem', )"
+                                    class="btnDelete"><i
+                                        class="fa-solid fa-trash"></i></button>
+
+                                <button wire:click="edit()"
+                                    class="btnEdit"><i
+                                        class=" fa-solid fa-pen-to-square"></i></button>
+                            </td>
+                        </tr>
+                     
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
     
+    </section>
 
-
-    <div class="modal">
+    {{-- <div class="modal">
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -74,5 +130,5 @@
                     id="grid-zip" type="text" placeholder="90210">
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
