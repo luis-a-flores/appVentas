@@ -42,6 +42,12 @@ Route::middleware([
 });
 
 
+
+
+
+
+
+//  rutas cliente
 Route::get('/products', function () {
     return view('cliente.products');
 })->name('products');
@@ -63,6 +69,8 @@ Route::get('/encuentranos', function () {
 
 
 
+
+// rutas panel admin
 Route::get('/admin/users', function () {
     return view('admin.users');
 })->name('adminUsers');

@@ -28,17 +28,15 @@
              @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
-             .sidebar i{
-    @apply mr-2;
-}
 
-.btnSave{
-    @apply bg-blue-500 rounded-sm ;
-}
 
-.navBarUl > li{
-    @apply hover:underline cursor-pointer
-}
+            .btnSave{
+                @apply bg-blue-500 rounded-sm ;
+            }
+
+            .navBarUl > li{
+                @apply hover:underline cursor-pointer
+            }
             /*
                     /*
                 ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
@@ -1363,7 +1361,7 @@
                 }
                 }
 
-               
+
         </style>
 
 
@@ -1385,15 +1383,15 @@
                 <span class="text-gray-400 font-bold">ADMIN</span>
                 <li class="mb-1 group">
                     <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-                        <i class="fa-solid fa-cart-shopping "></i>
+                        <i class="fa-solid  mr-2 fa-cart-shopping "></i>
                         <span class="text-sm">Pedidos</span>
                     </a>
                 </li>
-               
-          
+
+
                 <li class="mb-1 group">
                     <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
-                        <i class="fa-solid fa-lemon "></i>
+                        <i class="fa-solid  mr-2 fa-lemon "></i>
                         <span class="text-sm">Productos</span>
                         <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
                     </a>
@@ -1411,7 +1409,7 @@
                 </li>
                 <li class="mb-1 group">
                     <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <i class="fa-solid  mr-2 fa-hand-holding-dollar"></i>
                         <span class="text-sm">Ventas</span>
                     </a>
                 </li>
@@ -1419,7 +1417,7 @@
 
                 <li class="mb-1 group">
                     <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
-                        <i class="fa-solid fa-users"></i>
+                        <i class="fa-solid  mr-2 fa-users"></i>
                         <span class="text-sm">Users</span>
                         <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
                     </a>
@@ -1432,15 +1430,15 @@
                         </li>
                     </ul>
                 </li>
-              
+
                 <li class="mb-1 group">
                     <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-                        <i class="fa-solid fa-comments"></i>
+                        <i class="fa-solid  mr-2 fa-comments"></i>
                         <span class="text-sm">Notifications</span>
                         <span class=" md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-600 bg-red-200 rounded-full">5</span>
                     </a>
                 </li>
-              
+
             </ul>
         </div>
         <div class="fixed top-0 left-0 w-full h-full bg-black/50 z-40 md:hidden sidebar-overlay"></div>
@@ -1450,8 +1448,8 @@
             <!-- navbar -->
             <div class="py-2 px-6 bg-[#f8f4f3] flex items-center shadow-md shadow-black/5 sticky top-0 left-0 z-30">
                 <button type="button" class="text-lg text-gray-900 font-semibold sidebar-toggle">
-                  
-                    <i class="fa-solid fa-bars"></i>
+
+                    <i class="fa-solid  mr-2 fa-bars"></i>
                 </button>
 
                 <ul class="ml-auto flex items-center">
