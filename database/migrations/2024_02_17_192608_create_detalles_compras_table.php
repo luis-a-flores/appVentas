@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('detalles_compras', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_user_compras');
-            $table->foreignId('idProducto');
+            $table->foreignId('id_producto');
             $table->float('monto',8,2);
             $table->timestamps();
         });

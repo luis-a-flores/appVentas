@@ -21,10 +21,10 @@ export default {
             colors:{
 
                 companyColor: {
-                    primary : '#5eead4',
-                    'primary-lighter': '#25303b',
-                    secondary: '#fb7185',
-                    third: '#5eead4',
+                    primary : '#266ddd',
+                    'primary-lighter': '#67bed9',
+                    secondary: '#dd2826',
+                    third: '#8326dd',
                     text1: '#fff',
                     text2: '#f2f2f2',
 

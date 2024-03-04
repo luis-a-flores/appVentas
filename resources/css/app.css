@@ -18,7 +18,7 @@
     @apply text-xs font-semibold uppercase text-gray-400 bg-gray-50;
 }
 .titleTable{
-    @apply font-semibold text-lg relative w-full px-1 max-w-full flex-grow flex-1 text-gray-800;
+    @apply underline underline-offset-4 font-semibold relative w-full px-1 max-w-full flex-grow flex-1 text-gray-500 text-lg;
 }
 .thTable{
     @apply cursor-pointer px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-gray-700 text-cyan-300 border-cyan-700;
@@ -28,15 +28,28 @@
 }
 
 .btnAdd{
-    @apply border-2 text-lime-300  bg-companyColor-primary border-lime-300 font-bold hover:bg-gray-700 hover:text-lime-300    rounded-md px-3 py-1.5 w-fit
+    flex: none;
+    @apply text-sm border-2 text-gray-100  bg-companyColor-primary font-bold hover:bg-blue-500    rounded-md px-3 py-1.5 w-fit
 }
 .btnDelete{
-    @apply bg-rose-500 hover:bg-rose-600 rounded-md p-2 text-base;
+    @apply bg-rose-500 hover:bg-rose-600 rounded-md p-2 text-base text-white;
 }
 .btnEdit{
-    @apply bg-cyan-800 hover:bg-cyan-700 rounded-md p-2 text-base;
+    @apply bg-companyColor-third hover:bg-companyColor-third hover:text-white rounded-md p-2 text-base text-gray-100;
 }
 
 .btnItem{
     @apply bg-orange-400 hover:bg-orange-500 rounded-md p-2 text-base text-gray-700 hover:text-gray-600;
+}
+
+.inputText{
+    @apply rounded-md w-1/2  text-sm px-2 focus:outline-none focus:ring-2 focus:ring-companyColor-secondary focus:border-transparent
+}
+
+.inputTextSearch{
+    @apply pl-8 pr-4 py-1.5 rounded-md w-full text-sm focus:outline-none focus:ring-2 focus:ring-companyColor-secondary focus:border-transparent
+}
+
+.iconSearch{
+    @apply  absolute left-2 top-2.5 text-sm
 }

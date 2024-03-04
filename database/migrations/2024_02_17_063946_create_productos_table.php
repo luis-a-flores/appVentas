@@ -13,15 +13,10 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_categoria')->nullable();
             $table->string('clave')->unique();
             $table->string('nombre');
             $table->foreignId('marca')->nullable()->index();
-            $table->foreignId('categoria')->nullable()->index();
-            $table->float('precio_compra', 10,2);
-            $table->float('precio_venta', 8,2);
-            $table->integer('cantidad');
-            $table->foreignId('unidad')->nullable()->index();
-            $table->integer('stock_minimo');
             $table->timestamps();
         });
     }
