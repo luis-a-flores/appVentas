@@ -19,7 +19,7 @@ class AppProducts extends Component
     use WithFileUploads;
     use WithPagination;
 
-    public $id_categoria, $nombre, $id_update, $modal = false, $modal_subproductos = false, $idproductosSelect = 0; // columnas de la tabla
+    public $id_categoria, $nombre, $id_update, $modal = true,  $idproductosSelect = 0; // columnas de la tabla
 
 
     protected $validationAttributes  = [
@@ -34,7 +34,7 @@ class AppProducts extends Component
         if ($this->modal) {
            $this->modal = false;
 
-           $this->reset(['id_categoria', 'nombre', 'details', 'id_update' ]);
+           $this->reset(['id_categoria', 'nombre', 'id_update', 'idproductosSelect' ]);
         }else{
             $this->modal = true;
         }

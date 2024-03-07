@@ -23,7 +23,7 @@
             </div>
 
 
-            <div class="w-full md:w-1/2 flex flex-row   justify-between    md:justify-end">
+            <div class="w-full md:w-1/2 flex flex-row   justify-between    md:justify-end  gap-4">
 
 
 
@@ -105,7 +105,7 @@
             <div class="relative">
                 <h1 class="titleModal">Nuevo Producto</h1>
                 <div class="absolute top-0 right-0">
-                    <i wire:click="toggle()" class="fa-solid fa-rectangle-xmark bntClose "></i>
+                    <i wire:click="toggle()" class="fa-solid fa-rectangle-xmark btnClose "></i>
                 </div>
             </div>
 
@@ -118,7 +118,7 @@
 
                 <div class="sectionInputx2">
                     <label class=" inputTextTitle " for="grid-name">
-                        Nombre Producto
+                        Nombre Productos
                     </label>
 
 
@@ -139,6 +139,12 @@
                         @foreach ($categorias as $category)
                         <option value="{{$category->id}}">{{$category->name_category}}</option>
                         @endforeach
+                        <option value="">Text 1</option>
+                        <option value="">Text 1</option>
+                        <option value="">Text 1</option>
+                        <option value="">Text 1</option>
+                        <option value="">Text 1</option>
+                        <option value="">Text 1</option>
                     </select>
 
                     @error('id_category')
@@ -181,9 +187,9 @@
 
 
         <footer class=" modalFooter ">
-            <button wire:click="toggle()" class="btnTransparentCancel">Cancelar &nbsp; <i
+            <button wire:click="toggle()" class="btnDelete">Cancelar &nbsp; <i
                     class="fa-solid fa-ban"></i></button>
-            <button wire:click="save({{$id_update}})" class="btnTransparentSave">Guardar &nbsp; <i
+            <button wire:click="save({{$id_update}})" class="btnAdd">Guardar &nbsp; <i
                     class="fa-solid fa-floppy-disk"></i></button>
         </footer>
     </div>

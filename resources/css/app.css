@@ -7,6 +7,90 @@
 }
 
 
+/*-----Loader-------------*/
+.baseBgLoading{ @apply fixed  z-50 left-0 top-0 w-full bg-opacity-60 bg-gray-700 h-full}
+.containerLoading{@apply flex items-center justify-center w-full h-full}
+.spinLoading{@apply w-1/4 h-1/4 text-gray-200 animate-spin  fill-lime-300}
+.textLoading{@apply absolute text-2xl text-lime-300}
+/*---------SELECT 2-------*/
+
+
+.select2-container--default .select2-selection--single {
+    @apply rounded px-3 py-1 border-gray-300 border bg-white text-companyColor-secondary focus:outline-none focus:ring-2 focus:ring-companyColor-secondary focus:border-transparent focus:text-companyColor-secondary w-full !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    @apply text-gray-700 !important;
+}
+
+.select2-container--open .select2-dropdown--below {
+    @apply bg-white !important;
+    /* color de las opciones contenedor*/
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    @apply bg-companyColor-primary text-white font-semibold !important;
+}
+
+.select2-container--default .select2-results__option--selected {
+    @apply bg-companyColor-secondary text-white !important;
+    /*Una vez selecionado al seleccionar otro o hacer hover en otro este queda asi*/
+}
+
+.select2-container{
+    @apply w-full !important;
+}
+
+.select2-selection {
+    padding: .5rem !important;
+    height: 2.5rem !important;
+    border: solid 1px transparent !important;
+    font-size: 1rem !important;
+}
+
+.select2-results__option {
+    font-size: .8rem !important;
+    @apply bg-transparent;
+}
+
+.select2-selection__arrow {
+    padding-top: 2.5rem !important;
+}
+
+
+.scrollx {
+    overflow-x: auto;
+}
+
+.scrollEdit::-webkit-scrollbar {
+    width: 8px;
+    /* width of the entire scrollbar */
+    border-radius: 20px;
+}
+
+.scrollEdit::-webkit-scrollbar-track {
+    @apply bg-companyColor-primary;
+    /* color of the tracking area */
+    border-radius: 20px;
+}
+
+.scrollEdit::-webkit-scrollbar-thumb {
+
+    @apply bg-companyColor-third;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+
+}
+
+.scrollEdit::-webkit-scrollbar-thumb:hover {
+    background: #1118278a;
+    box-shadow: 0 0 2px 1px rgb(0 0 0 / 20%);
+
+
+    /*background-color: cadetblue;*/
+}
+
 
 
 
@@ -18,7 +102,7 @@
     @apply text-xs font-semibold uppercase text-gray-400 bg-gray-50;
 }
 .titleTable{
-    @apply underline underline-offset-4 font-semibold relative w-full px-1 max-w-full flex-grow flex-1 text-gray-500 text-lg;
+    @apply underline underline-offset-4 font-bold relative w-full px-1 max-w-full flex-grow flex-1 text-companyColor-secondary text-lg;
 }
 .thTable{
     @apply cursor-pointer px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-gray-700 text-cyan-300 border-cyan-700;
@@ -31,25 +115,82 @@
     flex: none;
     @apply text-sm border-2 text-gray-100  bg-companyColor-primary font-bold hover:bg-blue-500    rounded-md px-3 py-1.5 w-fit
 }
+
 .btnDelete{
-    @apply bg-rose-500 hover:bg-rose-600 rounded-md p-2 text-base text-white;
+    @apply bg-companyColor-secondary hover:bg-red-500 rounded-md p-2 text-base text-white;
 }
 .btnEdit{
     @apply bg-companyColor-third hover:bg-companyColor-third hover:text-white rounded-md p-2 text-base text-gray-100;
 }
 
+.btnClose{
+    @apply text-companyColor-secondary hover:text-red-500 cursor-pointer
+}
 .btnItem{
     @apply bg-orange-400 hover:bg-orange-500 rounded-md p-2 text-base text-gray-700 hover:text-gray-600;
 }
 
 .inputText{
-    @apply rounded-md w-1/2  text-sm px-2 focus:outline-none focus:ring-2 focus:ring-companyColor-secondary focus:border-transparent
+    @apply border border-gray-300 rounded-md w-full  text-sm px-2 focus:outline-none focus:ring-2 focus:ring-companyColor-secondary focus:border-transparent
 }
 
 .inputTextSearch{
-    @apply pl-8 pr-4 py-1.5 rounded-md w-full text-sm focus:outline-none focus:ring-2 focus:ring-companyColor-secondary focus:border-transparent
+    @apply border-gray-300 pl-8 pr-4 py-1.5 rounded-md w-full text-sm focus:outline-none focus:ring-2 focus:ring-companyColor-secondary focus:border-transparent
 }
 
 .iconSearch{
     @apply  absolute left-2 top-2.5 text-sm
 }
+
+
+
+/* Modal */
+.bgBaseModal{
+    @apply z-50 left-0 top-0 w-full bg-opacity-60 bg-gray-700 h-full
+ }
+ .modalDetails{
+     @apply flex flex-col justify-between bg-white ml-14 w-10/12 md:w-9/12 lg:md:w-7/12 md:mx-auto  mt-14 rounded-lg
+ }
+ .modalHeader{
+     @apply text-indigo-300 text-xl font-bold px-4 md:px-12 py-2 rounded-t
+ }
+ .titleModal {
+     @apply animate-fade-down animate-duration-500 text-companyColor-primary underline underline-offset-4
+ }
+
+
+ .modalBody {
+     @apply overflow-y-auto px-3 md:px-12 py-4 scrollEdit
+ }
+
+ .modalFooter {
+     @apply px-12 py-4 flex flex-row-reverse rounded-b gap-4
+ }
+
+ .inputTextTitle {
+     @apply text-gray-600 font-semibold block uppercase tracking-wide text-xs mb-1;
+ }
+
+ .sectionInputx1 {
+     @apply w-full ;
+ }
+
+ .sectionInputx2 {
+     @apply w-full md:w-1/2 mb-6 md:mb-0;
+ }
+
+ .sectionInputx3 {
+     @apply w-full ;
+ }
+
+ .slotFormx1 {
+     @apply flex flex-col  w-full  mt-3;
+ }
+
+ .slotFormx2 {
+     @apply flex flex-col md:flex-row w-full gap-4 mt-3;
+ }
+
+ .slotFormx3 {
+     @apply flex flex-col md:flex-row w-full gap-4 mt-3;
+ }
