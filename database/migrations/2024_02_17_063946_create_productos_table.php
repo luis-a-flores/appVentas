@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('id_categoria')->nullable();
             $table->string('clave')->unique();
             $table->string('nombre');
-            $table->foreignId('marca')->nullable()->index();
+            $table->string('marca');
             $table->timestamps();
         });
     }

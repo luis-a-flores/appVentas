@@ -59,34 +59,47 @@
                                 <div class="font-semibold text-left">Precio</div>
                             </th>
                             <th class="p-2 whitespace-nowrap">
+                                <div class="font-semibold text-center">Presentaciones</div>
+                            </th>
+                            <th class="p-2 whitespace-nowrap">
                                 <div class="font-semibold text-center">Acciones</div>
                             </th>
                         </tr>
                     </thead>
                     <tbody class="text-sm divide-y divide-gray-100">
+
+                        @foreach ($productos as $producto)
                         <tr>
                             <td class="p-2 whitespace-nowrap">
                                 <div class="flex items-center">
-                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg" width="40" height="40" alt="Alex Shatov"></div>
-                                    <div class="font-medium text-gray-800">Alex Shatov</div>
+                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://m.media-amazon.com/images/I/71m97KvDUFL.__AC_SX300_SY300_QL70_ML2_.jpg" width="40" height="40" alt="Alex Shatov"></div>
+                                    <div class="font-medium text-gray-800">{{$producto->id}}</div>
                                 </div>
                             </td>
                             <td class="p-2 whitespace-nowrap">
-                                <div class="text-left">frijol</div>
+                                <div class="text-left">{{$producto->clave}}</div>
                             </td>
                             <td class="p-2 whitespace-nowrap">
-                                <div class="text-left font-medium text-green-500">$2,890.66</div>
+                                <div class="text-left font-medium text-green-500">{{$producto->nombre}}</div>
+                            </td>
+                            <td class="p-2 whitespace-nowrap text-center">
+
+                                    <button wire:click="addPresentation({{$producto->id}})"
+                                    class="btnAdd"><i class="fa-solid fa-sitemap"></i></button>
+
                             </td>
                             <td class="p-2 whitespace-nowrap text-center">
                                 <button wire:click="$emit('deleteItem', )"
                                     class="btnDelete"><i
                                         class="fa-solid fa-trash"></i></button>
 
-                                <button wire:click="edit()"
+                                <button wire:click="edit({{$producto->id}})"
                                     class="btnEdit"><i
                                         class=" fa-solid fa-pen-to-square"></i></button>
                             </td>
                         </tr>
+                        @endforeach
+
 
                     </tbody>
                 </table>
@@ -103,7 +116,8 @@
     <div class=" modalDetails" style="height: auto;  max-height: 88%;}">
         <header class=" modalHeader">
             <div class="relative">
-                <h1 class="titleModal">Nuevo Producto</h1>
+                <h1 class="titleModal">
+                    @if(blank($id_update)) Nuevo Producto  @else   Actualizar Producto @endif </h1>
                 <div class="absolute top-0 right-0">
                     <i wire:click="toggle()" class="fa-solid fa-rectangle-xmark btnClose "></i>
                 </div>
@@ -114,74 +128,82 @@
         <div class="modalBody ">
             <!-- Es un flex de 2 inputs  -->
 
+
+
+            <div class="slotFormx2">
+
+
+                <div class="sectionInputx2">
+                    <label class=" inputTextTitle " for="grid-name">
+                        Nombre Producto
+                    </label>
+
+
+                    <input wire:model.defer="nombre" type="text" class="inputText">
+
+                    @error('nombre')
+                    <span class="errorBack"> {{$message}}</span>
+                    @enderror
+                </div>
+
+
+
+                <div class="sectionInputx2">
+                    <label class=" inputTextTitle " for="grid-name">
+                        Clave
+                    </label>
+
+
+                    <input wire:model.defer="clave" type="text" class="inputText">
+
+                    @error('clave')
+                    <span class="errorBack"> {{$message}}</span>
+                    @enderror
+                </div>
+
+
+
+
+            </div>
+
             <div class="slotFormx2">
 
                 <div class="sectionInputx2">
                     <label class=" inputTextTitle " for="grid-name">
-                        Nombre Productos
+                        Marca
                     </label>
 
 
-                    <input wire:model.defer="name_product" type="text" class="inputText">
+                    <input wire:model.defer="marca" type="text" class="inputText">
 
-                    @error('name_product')
+                    @error('marca')
                     <span class="errorBack"> {{$message}}</span>
                     @enderror
                 </div>
 
 
 
-                <div class="sectionInputx2">
-                    <label class=" inputTextTitle " for="grid-category">Categoría: </label>
+                <div class="sectionInputx2" >
+                    <div wire:ignore>
+                        <label class=" inputTextTitle " for="grid-category">Categoría: </label>
 
-                    <select wire:model="id_category" name="" id="id_category"
-                        class="searchSelectCategory inputText">
-                        @foreach ($categorias as $category)
-                        <option value="{{$category->id}}">{{$category->name_category}}</option>
-                        @endforeach
-                        <option value="">Text 1</option>
-                        <option value="">Text 1</option>
-                        <option value="">Text 1</option>
-                        <option value="">Text 1</option>
-                        <option value="">Text 1</option>
-                        <option value="">Text 1</option>
-                    </select>
 
-                    @error('id_category')
+                        <select wire:model="id_categoria" name="" id="id_category"
+                            class="searchSelectCategory inputText">
+                            @foreach ($categorias as $categoria)
+                            <option value="{{$categoria->id}}">{{$categoria->nombre_categoria}}</option>
+                            @endforeach
+
+                        </select>
+                    </div>
+
+
+                    @error('id_categoria')
                     <span class="errorBack"> {{$message}}</span>
                     @enderror
 
-                </div>
-
-
-
-
-            </div>
-
-            <div class="slotFormx1">
-                <div class="sectionInputx1">
-                    <label class=" inputTextTitle " for="grid-name">
-                        Detalles
-                    </label>
-
-
-                    <input wire:model.defer="details" type="text" class="inputText">
-
-                    @error('details')
-                    <span class="errorBack"> {{$message}}</span>
-                    @enderror
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
         </div>
 
 
@@ -193,6 +215,37 @@
                     class="fa-solid fa-floppy-disk"></i></button>
         </footer>
     </div>
+
+</div>
+
+
+ {{-- Modal subproducts --}}
+ <div class="  @if ($idproductosSelect == true) fixed   @else hidden @endif  bgBaseModal">
+    @livewire('admin.components.app-products-presentation')
+
+    {{-- @livewire('publication.components.app-publication-slot1', ['date' =>  $day, 'search' => $search, 'byType' => $byType, 'filter' => $filter, 'arrayDates' => $days, 'key'=> $key], key($keyComponent)) --}}
+    @livewireScripts
+    @stack('js')
+
+</div>
+
+
+<div class="fixed z-50 w-full h-screen top-0 left-0" wire:loading>
+    <div class="bg-gray-200 opacity-50 w-full h-screen absolute"></div>
+    {{-- <div class="loader relative top-48 left-0"></div> --}}
+
+
+    <div class="banter-loader relative top-48 ">
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+        <div class="banter-loader__box"></div>
+      </div>
 
 </div>
 
@@ -230,7 +283,7 @@
         document.addEventListener('livewire:load', function(){
                 $('.searchSelectCategory').select2();
                 $('.searchSelectCategory').on('change', function () {
-                    @this.set('id_category', this.value);
+                    @this.set('id_categoria', this.value);
                 });
 
                 // $('.searchSelectUnit').select2();
@@ -244,7 +297,7 @@
         //    $('#id_unit').val(opcion).trigger('change.select2').trigger('select2:select');
         // });
 
-        Livewire.on('setCategory', opcion => {
+        Livewire.on('setcategoria', opcion => {
            $('#id_category').val(opcion).trigger('change.select2').trigger('select2:select');
         });
 </script>

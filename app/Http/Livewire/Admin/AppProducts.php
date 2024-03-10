@@ -9,6 +9,7 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use App\Models\productos;
+use App\Models\unidad;
 use App\Models\categoria;
 
 
@@ -19,14 +20,16 @@ class AppProducts extends Component
     use WithFileUploads;
     use WithPagination;
 
-    public $id_categoria, $nombre, $id_update, $modal = true,  $idproductosSelect = 0; // columnas de la tabla
+    public $id_categoria, $nombre, $id_update, $modal = false, $modal_presentation = true, $marca, $clave, $idproductosSelect = 0; // columnas de la tabla
 
-
+    protected $rules = [];
     protected $validationAttributes  = [
         'nombre' => "Nombre de producto",
-        'details' => "Detalles del material",
+        'marca' => "Marca",
         'id_categoria' => "Categoría",
+        'clave' => "Clave"
     ];
+
 
 
     public function toggle(){
@@ -47,8 +50,10 @@ class AppProducts extends Component
 
         $this->id_company = 1;  // companya a la que le agrega
 
+        $unidades = unidad::all();
         $categorias = categoria::all();
         $productos = productos::all();
+
 
 
 
@@ -64,8 +69,9 @@ class AppProducts extends Component
 
 
         return view('livewire.admin.app-products')
-        ->with('productos', $productos)
-        ->with('categorias', $categorias);
+        ->with('unidades', $unidades)
+        ->with('categorias', $categorias)
+        ->with('productos', $productos);
     }
 
 
@@ -74,16 +80,15 @@ class AppProducts extends Component
 
         $this->rules += [
             'nombre' => 'required|max:80',
-            'details' => 'required|max:255',
+            'clave' => 'required|max:80',
             'id_categoria' => 'required',
+            'marca' => 'required|max:80',
         ];
 
 
         $this->validate();
 
         try{
-            //Calcula precio por millares es decir 1 litro lo convierte a mililitro
-            //y saca su precio por unidad ya que al usar productes normalmente se uan porciones ejemplo 25ml leche o 50 gr de azucar
 
             // Save meterial new or edit
             if($id == null){
@@ -94,8 +99,8 @@ class AppProducts extends Component
 
             $productos->id_categoria  = $this->id_categoria;
             $productos->nombre = $this->nombre;
-            $productos->details = $this->details;
-            $productos->id_company= $this->id_company;
+            $productos->clave = $this->clave;
+            $productos->marca= $this->marca;
             $productos->save();
 
             $this->alert('success', '¡Guardado con éxito!', [
@@ -114,25 +119,18 @@ class AppProducts extends Component
 
 
         $this->modal = false;
-        $this->reset(['id_categoria','nombre', 'details',  'id_update']);
+        $this->reset(['id_categoria','nombre', 'clave',  'marca']);
         $this->emit('setcategoria',  $this->id_categoria );
     }
 
 
     public function edit($id){
 
-        $this->rules += [
-            'nombre' => 'required|max:80',
-            'details' => 'required|max:255',
-            'id_categoria' => 'required',
-        ];
-
         $productos = productos::find($id);
-
         $this->id_categoria = $productos->id_categoria;
         $this->nombre = $productos->nombre;
-        $this->details = $productos->details;
-        $this->id_company =  $productos->id_company;
+        $this->clave = $productos->clave;
+        $this->marca =  $productos->marca;
 
         $this->id_update = $productos->id;
 
@@ -143,5 +141,19 @@ class AppProducts extends Component
 
 
 
+    public function addPresentation($id){
+
+        if ($this->modal_presentation) {
+            $this->modal_presentation = false;
+            $this->idproductosSelect = $id;
+        }else{
+            $this->modal_presentation = true;
+            $this->idproductosSelect = 0;
+        }
+
+
+        $this->emit('idProductSelectFather', $id);  //usuario del area seleccionada
+
+    }
 
 }

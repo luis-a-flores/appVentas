@@ -1,6 +1,11 @@
+@import url('spinload.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
 
 [x-cloak] {
     display: none;
@@ -117,17 +122,17 @@
 }
 
 .btnDelete{
-    @apply bg-companyColor-secondary hover:bg-red-500 rounded-md p-2 text-base text-white;
+    @apply text-sm border-2 text-gray-100  bg-companyColor-secondary font-bold hover:bg-red-500    rounded-md px-3 py-1.5 w-fit;
 }
 .btnEdit{
-    @apply bg-companyColor-third hover:bg-companyColor-third hover:text-white rounded-md p-2 text-base text-gray-100;
+    @apply text-sm border-2 text-gray-100  bg-companyColor-third font-bold hover:bg-violet-600    rounded-md px-3 py-1.5 w-fit
 }
 
 .btnClose{
-    @apply text-companyColor-secondary hover:text-red-500 cursor-pointer
+    @apply text-companyColor-secondary hover:text-red-500 cursor-pointer text-2xl
 }
 .btnItem{
-    @apply bg-orange-400 hover:bg-orange-500 rounded-md p-2 text-base text-gray-700 hover:text-gray-600;
+    @apply bg-orange-400 hover:bg-orange-500 rounded-md p-2 text-sm text-gray-700 hover:text-gray-600;
 }
 
 .inputText{
@@ -151,6 +156,7 @@
  .modalDetails{
      @apply flex flex-col justify-between bg-white ml-14 w-10/12 md:w-9/12 lg:md:w-7/12 md:mx-auto  mt-14 rounded-lg
  }
+
  .modalHeader{
      @apply text-indigo-300 text-xl font-bold px-4 md:px-12 py-2 rounded-t
  }
@@ -194,3 +200,18 @@
  .slotFormx3 {
      @apply flex flex-col md:flex-row w-full gap-4 mt-3;
  }
+
+ .errorBack {
+    font-size: .65rem;
+    @apply  italic font-medium  mt-0.5 text-red-800
+}
+
+
+
+
+
+
+
+
+
+
